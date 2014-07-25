@@ -7,7 +7,7 @@ The libraries needed for this class to work correctly are JQuery and Bootstrap.
 
 
 ```JavaScript
-//example of modal popup (you have to include a reference to bootstrap library)
+//example of modal popup that works with the js class included (you have to include a reference to bootstrap library)
 ```
 
 
