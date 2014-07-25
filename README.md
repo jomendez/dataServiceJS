@@ -5,6 +5,15 @@ This code is a wrap layer useful for capture and display errors early when you w
 every time an AJAX call is made, you can use it as boilerplate to build your own. This class used the revealed pattern.
 The libraries needed for this class to work correctly are JQuery and Bootstrap.
 
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+<!-- Optional theme -->
+<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
 //example of modal popup (you have to include a reference to bootstrap library)
  <div id="errorModal" class="modal hide fade" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-header">
