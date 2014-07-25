@@ -6,8 +6,10 @@ every time an AJAX call is made, you can use it as boilerplate to build your own
 The libraries needed for this class to work correctly are JQuery and Bootstrap.
 
 
-
+```JavaScript
 //example of modal popup (you have to include a reference to bootstrap library)
+```
+
 
 ```HTML
  <div id="errorModal" class="modal hide fade" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
