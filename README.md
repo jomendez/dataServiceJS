@@ -6,7 +6,7 @@ every time an AJAX call is made, you can use it as boilerplate to build your own
 The libraries needed for this class to work correctly are JQuery and Bootstrap.
 
 
-<code>
+<p> </p>
 //example of modal popup (you have to include a reference to bootstrap library)
  < div id="errorModal" class="modal hide fade" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 < div class="modal-header">
@@ -23,4 +23,3 @@ The libraries needed for this class to work correctly are JQuery and Bootstrap.
                     < button id="logYouOutByJsError" class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Accept</ button>
                 </ div>
             </ div>
-</code>
