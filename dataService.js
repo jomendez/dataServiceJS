@@ -1,22 +1,32 @@
-var tm = tm || {};
-
-tm.dataService = function () {
+var dataService = function () {
     var $errorModal = $("#errorModal"); //This is the ID of the bootstrap modal popup
 
     //Sends data to server via a post request.  Sends to a Web API.
     var post = function (url, data) {
-        var options = { type: 'POST' };
+        var options = {
+            type: 'POST',
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json'
+        };
         return sendRequest(url, options, data);
     }
 
     //Performs a get request
     var get = function (url, data) {
-        var options = { type: 'GET' };
+        var options = {
+            type: 'GET',
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json'
+        };
         return sendRequest(url, options, data);
     };
 
     var del = function (url, data) {
-        var options = { type: 'DELETE' };
+        var options = {
+            type: 'DELETE',
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json'
+        };
         return sendRequest(url, options, data);
     }
 
@@ -61,8 +71,9 @@ tm.dataService = function () {
         //if request was successful, reset auth timeout.
         //this part is in case you implemet authorization for the web APIs, to extend the Authorization time
         if (successfulRequest) {
-            if (tm.authorization.isInitialized) {
-                tm.authorization.restartAuthTimeout();//this are custom methods
+            var isInitialized = false;//this is mock up, you need to change this fro you own code
+            if (isInitialized) {
+                restartAuthTimeout();//this are custom methods
             }
         }
 
@@ -73,7 +84,7 @@ tm.dataService = function () {
         switch (response.status) {
             //Not Authorized
             case 401:
-                tm.authorization.handleAuthTimeout();
+                handleAuthTimeout();
                 break;
                 //Bad Gateway (usually bad connection)
             case 502:
@@ -125,7 +136,7 @@ tm.dataService = function () {
     function logError(response) {
         var error = createErrorMessage(response);
 
-        sendRequest('api/Notification/logJsError', { type: 'POST', isErrorLogRequest: true }, { error: error });
+        //sendRequest('api/Notification/logJsError', { type: 'POST', isErrorLogRequest: true }, { error: error });
     }
 
     function redirectToLogin() {
@@ -143,18 +154,19 @@ tm.dataService = function () {
 
 
 
-
+/*
 //example of use
-var db = tm.dataService;
+var db = dataService;
 var api = '/api/employee/';
-db.post(api + 'getEmployeeByPage', data).done(function (data) {
+var data = {};
+db.post(api + 'getPage', data).done(function (data) {
    
     if (data) {
        //if data is reeturned from the web api
     }
 
 });
-
+*/
 
 /*
 This code is a wrap layer useful for capture and display errors early when you work with web apis, and something fails in the AJAX call, and also to extend the auth time
